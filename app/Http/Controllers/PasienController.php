@@ -12,6 +12,8 @@ class PasienController extends Controller
     public function index()
     {
         $pasien = \App\Models\Pasien::latest()->paginate(10);
+        $data['pasien'] = $pasien;
+        return view('pasien_index', $data);
     }
 
     /**
