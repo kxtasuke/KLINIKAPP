@@ -11,14 +11,13 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('pasien', function (Blueprint $table) {
+        Schema::create('poliz', function (Blueprint $table) {
             $table->id();
-            $table->string('no_pasien');
+            $table->string('kode_polis')->unique;
             $table->string('nama');
-            $table->string('umur');
-            $table->string('foto')->nullable();
-            $table->string('jenis_kelamin');
-            $table->text('alamat')->nullable();
+            $table->text('deskripsi')->nullable();
+            $table->integer('biaya')->default(0);
+            $table->boolean('is_aktif')->default(true);
             $table->timestamps();
         });
     }
@@ -28,6 +27,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('pasiens');
+        Schema::dropIfExists('poliz');
     }
 };

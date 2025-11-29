@@ -1,20 +1,19 @@
 <?php
 
 namespace App\Models;
+
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Pasien extends Model
+class Poli extends Model
 {
     use HasFactory;
-
-    protected $table = 'pasien';
-
+    
     protected $fillable = [
-        'no_pasien',
+        'kode_pilis',
         'nama',
-        'umur',
-        'jenis_kelamin',
-        'alamat',
+        'biaya',
+        'deskripsi',
+        'is_aktif',
     ];
 }
